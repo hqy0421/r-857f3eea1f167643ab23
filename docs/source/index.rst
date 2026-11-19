@@ -19,6 +19,7 @@ true outputs within a user-defined error :math:`\alpha`.
    classification
    object_detection
    anomaly_detection
+   recourse
    api
    metrics
    plotting

@@ -4,6 +4,14 @@ This file documents main changes across releases of **PUNCC**.
 
 ---
 
+## [Unreleased]
+
+### Added
+- New `deel.puncc.recourse` module implementing conformal recourse for fixed pre-trained multi-output linear models: given an independent calibration set, `ConformalRecourse` builds native split-conformal Bonferroni intervals at a fixed total alpha and searches, via a mixed-integer linear program solved to a certified global minimum, for the cheapest record modification (weighted L1 on numeric changes in original units plus categorical switching fees) such that every targeted metric's interval lower bound reaches its threshold, within numeric bounds, immutable fields, allowed categories and linear business constraints. Suggestions are re-verified through the real model and calibrator; infeasibility, insufficient calibration data and solver/verification failures are reported through distinct exceptions
+- Added `scipy>=1.9.0` to the project dependencies (MILP solver used by `deel.puncc.recourse`)
+
+---
+
 ## [0.9.3] - 2026-06-23
 
 ### Changed
